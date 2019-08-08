@@ -808,6 +808,9 @@ proc run_commands { prompt command } {
     } else {
 	send -h "quit\r"
     }
+    if { [string compare "edgemax" "$platform"] } {
+	send -h "quit\rn"
+    }
     expect {
 	-re "^\[^\n\r *]*$reprompt"		{
 						  # the Cisco CE and Jnx ERX
