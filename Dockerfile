@@ -49,6 +49,8 @@ RUN rm -f /etc/ssmtp/ssmtp.conf \
 RUN mv /usr/bin/ssh /usr/bin/ssh.orig
 COPY ssh-wrapper /usr/bin/ssh
 
+# Stupid netgear workaround
+COPY clogin /bin/clogin
 # set up entrypoint
 COPY docker-entrypoint.sh /
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
